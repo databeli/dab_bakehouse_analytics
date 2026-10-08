@@ -13,7 +13,7 @@ on:
     branches:
       - main
     paths:
-      - 'bakehosue_analytics/**'
+      - 'bakehouse_analytics/**'
 
 jobs:
   deploy:
@@ -31,7 +31,7 @@ jobs:
       # Deploy the bundle to the "prod" target as defined
       # in the bundle's settings file.
       - run: databricks bundle deploy
-        working-directory: bakehosue_analytics
+        working-directory: bakehouse_analytics
         env:
           DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
           DATABRICKS_BUNDLE_ENV: prod
