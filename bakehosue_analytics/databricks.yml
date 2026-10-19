@@ -2,7 +2,7 @@
 # See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
 bundle:
   name: bakehosue_analytics
-  uuid: 48af9ba3-3bd2-4d53-b3a0-6da125f067ee
+  uuid: 48af9ba3-3bd2-4d53-b3a0-6da125f067ef
 
 include:
   - resources/*.yml
@@ -26,7 +26,7 @@ targets:
 
     default: true
     workspace:
-      host: https://dbc-3f1c04d0-60d3.cloud.databricks.com
+      host: https://dbc-825e81fd-7b96.cloud.databricks.com
     variables:
       catalog: bakehouse_analytics_dev
       schema: rnd
@@ -35,12 +35,14 @@ targets:
     presets:
       name_prefix: prod_
     workspace:
-      host: https://dbc-3f1c04d0-60d3.cloud.databricks.com
-      # We explicitly deploy to /Workspace/Users/databeli14@gmail.com to make sure we only have a single copy.
-      root_path: /Workspace/Users/databeli14@gmail.com/.bundle/${bundle.name}/${bundle.target}
+      host: https://dbc-825e81fd-7b96.cloud.databricks.com
+      # We explicitly deploy to /Workspace/Users/django6533@hotmail.com to make sure we only have a single copy.
+      root_path: /Workspace/Users/django6533@hotmail.com/.bundle/${bundle.name}/${bundle.target}
+    run_as:
+      service_principal_name: 'efae9c3c-991f-4883-b30b-993db61182ae'
     variables:
       catalog: bakehouse_analytics_prod
       schema: rnd
     permissions:
-      - user_name: databeli14@gmail.com
+      - user_name: django6533@hotmail.com
         level: CAN_MANAGE
